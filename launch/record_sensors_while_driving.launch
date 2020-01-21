@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="total_collection_time_seconds"   default="5.0"/>
     <arg name="rosbag_topics" default="
 /battery
 /camera/camera_nodelet_manager/bond
@@ -96,9 +95,10 @@
 /tf
 /tf_static
 "/>
-    <arg name="drive_time"              default="10.0"/>
+    <!-- args defaulted to driving forward 1 meter at 0.2 m/s as requested in the assignment-->
+    <arg name="drive_time"              default="20.0"/>
     <arg name="drive_speed"             default="0.1"/>
-    <arg name="rosbag_file_name_prefix" default="/home/husarion/sam_bag_files/"/>
+    <arg name="rosbag_file_name_prefix" default="/home/husarion/sam_ws/src/assignment_1/bag_files/"/>
 
     <node name="plot_odom_node" pkg="assignment_1" type="plot_odom_node.py" output="screen">
         <param name="total_collection_time_seconds" type="double" value="$(arg drive_time)"/>

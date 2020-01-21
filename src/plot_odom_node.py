@@ -7,7 +7,7 @@ import geometry_msgs.msg
 from matplotlib import pyplot
 
 ODOMETRY_TOPIC = "/pose"
-OUTPUT_FILE = "/home/husarion/sam_assignment_1_pose_data.csv"
+OUTPUT_FILE = "/home/husarion/sam_ws/src/assignment_1/sam_assignment_1_pose_data.csv"
 
 collection_start_time = None
 total_collection_time = None
@@ -58,9 +58,8 @@ def main():
 
     total_collection_time = rospy.get_param("~total_collection_time_seconds")
 
-    odom_subscriber = rospy.Subscriber(ODOMETRY_TOPIC, geometry_msgs.msg.PoseStamped, odom_callback)
-
     rospy.loginfo("Collecting odom data for {} seconds".format(total_collection_time))
+    odom_subscriber = rospy.Subscriber(ODOMETRY_TOPIC, geometry_msgs.msg.PoseStamped, odom_callback)
 
     collection_time_poll_rate = rospy.Rate(20)
     while not collection_completed and not rospy.is_shutdown():
