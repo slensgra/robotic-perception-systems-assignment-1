@@ -29,7 +29,7 @@ def odom_callback(odometry_message):
     pose_history.append(odometry_message.pose)
 
 
-def plot_data():
+def output_data():
     global pose_history, total_collection_time
 
     position_x_components = [
@@ -66,7 +66,7 @@ def main():
         collection_time_poll_rate.sleep()
 
     rospy.loginfo("Completed data collection. Plotting.")
-    plot_data()
+    output_data()
 
 
 if __name__ == "__main__":
