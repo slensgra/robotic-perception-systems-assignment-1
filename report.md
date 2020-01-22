@@ -13,3 +13,7 @@ This node operates by starting up a subscriber to the `/pose` topic which publis
 ## Part 2 experiment
 
 For Part 2, the launch file `record_sensors_while_driving.launch` may be used. The bag files from this experiment are in the `bag_files` directory. A csv file with manual measurements taken from a video of the vehicle driving are provided in the same directory.
+
+## Evaluation
+
+For part 2, the robot was video taped while driving forward for the specified distance over a measuring tape. The robot drove forward about the specified one meter. 
